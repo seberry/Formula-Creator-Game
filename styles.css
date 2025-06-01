@@ -1,0 +1,182 @@
+/*
+  Project: Formula Factory - Interactive Well-Formed Formula (WFF) Builder
+  Description: Layout update to place logical connective forges on the left and workspace on the right,
+  both side-by-side beneath the atomic sentences ("source") area.
+*/
+
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  margin: 0;
+  background: #f5f5f5;
+  color: #222;
+}
+
+header {
+  background: #305080;
+  color: #fff;
+  padding: 1em;
+  text-align: center;
+}
+
+main {
+  max-width: 1100px;
+  margin: 1.5em auto;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 12px rgba(60,60,100,0.07);
+  padding: 2em;
+}
+
+#atomic-source-forge {
+  min-width: 220px;
+  background: #d9f3e6;
+  margin-bottom: 1.5em;
+}
+
+#formula-factory-flex {
+  display: flex;
+  flex-direction: row;
+  gap: 2em;
+  align-items: flex-start;
+}
+
+#rule-forges-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2em;
+  flex: 1 1 340px;
+  min-width: 280px;
+  max-width: 400px;
+}
+
+.forge-item {
+  background: #e0e7ef;
+  border-radius: 6px;
+  padding: 1em;
+  min-width: 210px;
+  box-shadow: 0 2px 6px rgba(90,100,120,0.05);
+}
+
+.forge-header {
+  font-weight: bold;
+  margin-bottom: 0.5em;
+}
+
+.forge-rule {
+  margin-bottom: 0.6em;
+  color: #334;
+}
+
+.forge-drop-slot {
+  display: inline-block;
+  min-width: 40px;
+  min-height: 32px;
+  background: #fff;
+  border: 2px dashed #b0b9c8;
+  border-radius: 4px;
+  vertical-align: middle;
+  margin: 0 0.2em;
+  transition: border-color 0.2s;
+}
+
+.forge-drop-slot.active {
+  border-color: #1a73e8;
+  background: #e3f0fd;
+}
+
+.forge-button {
+  margin-top: 0.7em;
+  padding: 0.36em 1.5em;
+  border: none;
+  border-radius: 4px;
+  background: #1a73e8;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.forge-button:disabled {
+  background: #b0b9c8;
+  cursor: not-allowed;
+}
+
+.atomic-tile, .formula-tile {
+  display: inline-block;
+  padding: 0.5em 1em;
+  margin: 0.2em;
+  border-radius: 5px;
+  background: #fff;
+  border: 2px solid #b0b9c8;
+  box-shadow: 0 1px 3px rgba(60,60,100,0.04);
+  cursor: grab;
+  font-family: "Fira Mono", "Consolas", monospace;
+  user-select: none;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.atomic-tile:active, .formula-tile:active {
+  background: #f0f8ff;
+  border-color: #1a73e8;
+}
+
+#workspace-container {
+  flex: 1 1 420px;
+  max-width: 540px;
+  margin-top: 0;
+  background: #f9fbfd;
+  border-radius: 6px;
+  box-shadow: 0 1px 6px rgba(60,60,100,0.05);
+  padding: 1.2em 1em 1em 1em;
+  min-height: 220px;
+  display: flex;
+  flex-direction: column;
+}
+
+#workspace-container h2 {
+  margin-top: 0;
+  margin-bottom: 0.6em;
+}
+
+#workspace-tiles-area {
+  min-height: 60px;
+  border: 2px dashed #b0b9c8;
+  border-radius: 6px;
+  padding: 1em;
+  background: #fff;
+  margin-top: 0.2em;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5em;
+}
+
+@media (max-width: 900px) {
+  #formula-factory-flex {
+    flex-direction: column;
+    gap: 1.3em;
+  }
+  #workspace-container, #rule-forges-container {
+    max-width: 100%;
+    min-width: 0;
+  }
+}
+
+.atomic-tile,
+.formula-tile {
+  display: inline-block;
+  padding: 0.5em 1em;
+  margin: 0.2em;
+  border-radius: 5px;
+  background: #fff;
+  border: 2px solid #b0b9c8;
+  box-shadow: 0 1px 3px rgba(60,60,100,0.04);
+  cursor: grab;
+  font-family: "Fira Mono", "Consolas", monospace;
+  user-select: none;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.atomic-tile.dragging {
+  opacity: 0.5;
+  border-color: #1a73e8;
+  background: #e3f0fd;
+}
