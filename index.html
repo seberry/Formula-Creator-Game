@@ -1,0 +1,39 @@
+<!--
+  Project: Formula Factory - Interactive Well-Formed Formula (WFF) Builder
+  Layout update: workspace appears to the right of logical connective forges,
+  both beneath the atomic sentences source area.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Formula Factory - WFF Builder</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header>
+    <h1>Formula Factory</h1>
+    <p>Build well-formed formulas (WFFs) interactively!</p>
+  </header>
+  <main>
+    <section id="atomic-source-forge">
+      <!-- Atomic source will be rendered here by JS -->
+    </section>
+    <div id="formula-factory-flex">
+      <section id="rule-forges-container">
+        <!-- Rule forges (negation, conjunction, etc.) will be dynamically populated here -->
+      </section>
+      <section id="workspace-container">
+        <h2>Workspace</h2>
+        <div id="workspace-tiles-area">
+          <!-- User-created formula tiles will appear here -->
+        </div>
+      </section>
+    </div>
+  </main>
+  <script src="js/formula.js"></script>
+  <script src="js/drag-drop.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
